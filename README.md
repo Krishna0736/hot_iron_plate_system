@@ -50,5 +50,3 @@ To design a low-cost, reliable, and real-time alert system that:
 - Child safety environments  
 
 ---
-
-## Project Structure
