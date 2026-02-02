@@ -21,6 +21,7 @@ To design a low-cost, reliable, and real-time alert system that:
 - **IR Proximity Technology** – To detect hand presence
 - **Piezo Buzzer** – For audio alert
 - **Red LED** - Blinks when IR Pairs detect hand presence
+- **Yellow LED** - Glow when temperature above 44 degree celsius
 - **Connecting wires & power supply(Lithium Ion Battery 2S with Charging Module)**
 
 ---
