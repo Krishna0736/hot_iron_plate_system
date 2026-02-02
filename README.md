@@ -17,16 +17,19 @@ To design a low-cost, reliable, and real-time alert system that:
 
 ## Components Used
 - **Arduino Nano** – Main controller (compact and efficient)
-- **Thermistor** – For temperature measurement
-- **IR Proximity Sensor** – To detect hand presence
-- **Buzzer** – For audio alert
-- **Connecting wires & power supply**
+- **10k ntc Thermistor** – For temperature measurement
+- **IR Proximity Technology** – To detect hand presence
+- **Piezo Buzzer** – For audio alert
+- **Connecting wires & power supply(Lithium Ion Batteries 2S with charging module)**
+- **Red LED** - blink when IR pairs detect hand presence
+- **Yellow LED** - glow only when the temperature is above 44 degree celsius
 
+    
 ---
 
 ## Working Principle
 1. The **thermistor continuously measures the temperature** of the iron plate.  
-2. The **IR sensor detects if a hand is near the plate.**  
+2. The **IR pairs detects if a hand is near the plate.**  
 3. If:
    - Temperature is above the safe limit **AND**
    - A hand is detected nearby  
@@ -50,3 +53,14 @@ To design a low-cost, reliable, and real-time alert system that:
 - Child safety environments  
 
 ---
+
+## Future Improvements
+- As a DIY Kit to be installed on excisting iron's
+- Add an LCD display for temperature reading  
+- Implement Bluetooth alerts via mobile app  
+- Automatic power cut-off system  
+
+---
+
+## Developed By
+Priyansh Verma & Krishna Gupta
