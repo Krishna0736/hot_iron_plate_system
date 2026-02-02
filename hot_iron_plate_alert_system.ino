@@ -70,5 +70,5 @@ void loop() {
   // Debugging (Monitoring both IR sensors)
   Serial.print("Temp: "); Serial.print(steinhart);
   Serial.print(" | IR1: "); Serial.print(ir1 == LOW ? "OBJ" : "CLR");
-  Serial.print(" | IR2: "); Serial.println(ir2 == LOW ? "OBJ" : "CLR");}
-  
+  Serial.print(" | IR2: "); Serial.println(ir2 == LOW ? "OBJ" : "CLR");
+  }
