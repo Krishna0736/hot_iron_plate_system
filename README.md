@@ -24,7 +24,7 @@ To design a low-cost, reliable, and real-time alert system that:
 
 ---
 
-## ⚙️ Working Principle
+## Working Principle
 1. The **thermistor continuously measures the temperature** of the iron plate.  
 2. The **IR sensor detects if a hand is near the plate.**  
 3. If:
