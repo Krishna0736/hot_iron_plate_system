@@ -1,74 +1,64 @@
-// --- Pin Definitions ---
-const int irPin1 = 9;         // Original IR Sensor
-const int irPin2 = 8;         // New IR Sensor
-const int buzzerPin = 6;  
-const int yellowled = 5;  
-const int redled = 7;   
-const int thermistorPin = A0; 
-const int buttonPin = 4;      
+# Hot Iron Plate Alert System
 
-// --- Thermistor Constants ---
-const float R_DIVIDER = 10000.0; 
-const float BETA = 3950.0;       
-const float ROOM_TEMP = 298.15;  
-const float R_NOMINAL = 10000.0; 
+## Overview
+The **Hot Iron Plate Alert System** is a safety-based hardware project designed to prevent accidental burns caused by contact with a heated electric iron. The system detects both the temperature of the iron plate and the proximity of a hand, and triggers an audible alert when the surface is dangerously hot.
 
-// --- Settings ---
-const float TEMP_THRESHOLD = 45.0; 
+This makes it especially useful in homes, hostels, and shared spaces where accidental contact with hot appliances is common.
 
-void setup() {
-  pinMode(irPin1, INPUT);
-  pinMode(irPin2, INPUT);     // Initialize second IR sensor
-  pinMode(buzzerPin, OUTPUT);
-  pinMode(yellowled, OUTPUT);
-  pinMode(redled, OUTPUT);
-  pinMode(buttonPin, INPUT_PULLUP); 
-  
-  Serial.begin(9600);
-}
+---
 
-void loop() {
-  // 1. Read All Sensors
-  int analogValue = analogRead(thermistorPin);
-  int buttonState = digitalRead(buttonPin); 
-  int ir1 = digitalRead(irPin1);  
-  int ir2 = digitalRead(irPin2);
+## Objective
+To design a low-cost, reliable, and real-time alert system that:
+- Detects high temperature on an iron plate  
+- Senses nearby hand presence  
+- Warns users through a buzzer before contact  
 
-  // 2. Temperature Calculation
-  float resistance = R_DIVIDER / (1023.0 / (float)analogValue - 1.0);
-  float steinhart;
-  steinhart = resistance / R_NOMINAL;     
-  steinhart = log(steinhart);             
-  steinhart /= BETA;                      
-  steinhart += 1.0 / ROOM_TEMP;           
-  steinhart = 1.0 / steinhart;            
-  steinhart -= 273.15;                    
+---
 
-  // 3. Logic Control
-  if (steinhart > TEMP_THRESHOLD) {
-    digitalWrite(yellowled, HIGH);
-    
-    // ALARM LOGIC:
-    // Trigger if (IR1 sees object OR IR2 sees object) AND button is NOT pressed
-    // Note: IR sensors output LOW when they detect something.
-    if ((ir1 == LOW || ir2 == LOW) && buttonState == HIGH) { 
-      digitalWrite(buzzerPin, HIGH);
-      digitalWrite(redled, HIGH); 
-    } 
-    else {
-      // Turn off if button is pressed OR if both IR sensors see nothing
-      digitalWrite(buzzerPin, LOW); 
-      digitalWrite(redled, LOW);
-    }
-  } else {
-    // System Safe
-    digitalWrite(yellowled, LOW);
-    digitalWrite(buzzerPin, LOW);
-    digitalWrite(redled, LOW);
-  }
+## Components Used
+- **Arduino Nano** – Main controller (compact and efficient)
+- **10k ntc Thermistor** – For temperature measurement
+- **IR Proximity Technology** – To detect hand presence
+- **Piezo Buzzer** – For audio alert
+- **Red LED** - Blinks when IR Pairs detect hand presence
+- **Connecting wires & power supply(Lithium Ion Battery 2S with Charging Module)**
 
-  // Debugging (Monitoring both IR sensors)
-  Serial.print("Temp: "); Serial.print(steinhart);
-  Serial.print(" | IR1: "); Serial.print(ir1 == LOW ? "OBJ" : "CLR");
-  Serial.print(" | IR2: "); Serial.println(ir2 == LOW ? "OBJ" : "CLR");
-  }
+---
+
+## Working Principle
+1. The **thermistor continuously measures the temperature** of the iron plate.  
+2. The **IR Pairs detects if a hand is near the plate.**  
+3. If:
+   - Temperature is above the safe limit **AND**
+   - A hand is detected nearby  
+   → The **buzzer turns ON** to warn the user.
+
+---
+
+## Features
+- Low-cost and easy to build  
+- Real-time alert system  
+- Compact design using Arduino Nano  
+- Energy efficient  
+- Simple and reliable logic  
+
+---
+
+## Applications
+- Household safety
+- Hostels and PG accommodations  
+- Laundry rooms  
+- Child safety environments  
+
+---
+
+## Future Improvements
+- To be used as a DIY kit, to easily install on excisting iron's
+- Add an LCD display for temperature reading  
+- Implement Bluetooth alerts via mobile app  
+- Automatic power cut-off system  
+
+---
+
+## Developed By
+Priyansh Verma & Krishna Gupta
