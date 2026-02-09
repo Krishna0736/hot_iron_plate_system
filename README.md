@@ -56,9 +56,4 @@ To design a low-cost, reliable, and real-time alert system that:
 - To be used as a DIY kit, to easily install on excisting iron's
 - Add an LCD display for temperature reading  
 - Implement Bluetooth alerts via mobile app  
-- Automatic power cut-off system  
-
----
-
-## Developed By
-Priyansh Verma & Krishna Gupta
+- Automatic power cut-off system
