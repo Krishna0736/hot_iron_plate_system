@@ -31,8 +31,7 @@ To design a low-cost, reliable, and real-time alert system that:
 2. The **IR Pairs detects if a hand is near the plate.**  
 3. If:
    - Temperature is above the safe limit **AND**
-   - A hand is detected nearby  
-   → The **buzzer turns ON** to warn the user.
+   - A hand is detected nearby → The **buzzer turns ON** to warn the user.
 
 ---
 
