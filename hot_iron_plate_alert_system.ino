@@ -1,6 +1,6 @@
 // --- Pin Definitions ---
-const int irPin1 = 9;         // Original IR Sensor
-const int irPin2 = 8;         // New IR Sensor
+const int irPin1 = 9;         // IR Sensor - 1
+const int irPin2 = 8;         // IR Sensor - 2
 const int buzzerPin = 6;  
 const int yellowled = 5;  
 const int redled = 7;   
