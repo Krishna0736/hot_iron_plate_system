@@ -3,7 +3,8 @@
 ## Overview
 The **Hot Iron Plate Alert System** is a safety-based hardware project designed to prevent accidental burns caused by contact with a heated electric iron. The system detects both the temperature of the iron plate and the proximity of a hand, and triggers an audible alert when the surface is dangerously hot.
 
-Being the 1st Runner Up, Made this project for MANTHAN 1.0 Hackathon - Maulana Azad National Institute of Technology, Bhopal M.P. (MANIT, BHPOAL)
+Being the 1st Runner Up and team leader, Made this project for MANTHAN 1.0 Hackathon - Maulana Azad National Institute of Technology, Bhopal M.P. (MANIT, BHOPAL) 
+with Team members : Priyansh Verma and Kaustubh Jain (TEAM IDEA LAB)
 
 This makes it especially useful in homes, hostels, and shared spaces where accidental contact with hot appliances is common.
 
